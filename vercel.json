@@ -1,0 +1,11 @@
+{
+  "services": {
+    "app": {
+      "runtime": "container",
+      "dockerfile": "Dockerfile.vercel"
+    }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/app" }
+  ]
+}

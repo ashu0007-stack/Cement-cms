@@ -1,0 +1,15 @@
+FROM dunglas/frankenphp:php8.3
+
+# अपने CMS के लिए आवश्यक PHP एक्सटेंशन इंस्टॉल करें
+RUN install-php-extensions pdo_mysql mysqli mbstring gd zip
+
+# अपनी सभी फाइलें कंटेनर में कॉपी करें
+COPY . /app
+
+# वर्किंग डायरेक्टरी सेट करें
+WORKDIR /app
+
+# Vercel का पोर्ट इस्तेमाल करें
+ENV PORT=80
+
+EXPOSE 80
